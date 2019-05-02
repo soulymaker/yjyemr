@@ -22,6 +22,32 @@
   <servlet-mapping>
     <servlet-name>emr-dispatcher</servlet-name>
     <!-- 用  / 表示 默认匹配所有的请求 -->
-    <url-pattern>/web</url-pattern>
+    <url-pattern>/</url-pattern>
   </servlet-mapping>
+
+  <filter>
+    <filter-name>corsFilter</filter-name>
+    <filter-class>utils.CorsFilter</filter-class>
+    <init-param>
+      <param-name>allowOrigin</param-name>
+      <param-value>http://localhost:8080</param-value>
+    </init-param>
+    <init-param>
+      <param-name>allowMethods</param-name>
+      <param-value>GET,POST,OPTIONS,DELETE</param-value>
+    </init-param>
+    <init-param>
+      <param-name>allowCredentials</param-name>
+      <param-value>true</param-value>
+    </init-param>
+    <init-param>
+      <param-name>allowHeaders</param-name>
+      <param-value>X-Requested-With,Content-Type</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>corsFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+
 </web-app>

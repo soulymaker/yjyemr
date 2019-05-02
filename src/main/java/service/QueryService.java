@@ -229,20 +229,22 @@ public class QueryService {
 
     //权限无感知登录
     public LoginDTO queryUser(User user) {
-        LoginDTO l=new LoginDTO();
+        LoginDTO l = new LoginDTO();
         if (user == null) {
+            System.out.println("user==null");
             return null;
         }
         try {
             User result = userDAO.login(user);
-            if(result!=null){
+            System.out.println("result:"+result==null);
+            if (result != null) {
                 l.setUserId(result.getUserId());
                 l.setUserType(result.getUserType());
             }
+            return l;
         } catch (Exception e) {
             return null;
         }
-        return null;
     }
 
     public QueryDTO queryUser2(User user) {
