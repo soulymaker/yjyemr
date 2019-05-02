@@ -63,10 +63,10 @@ public class UserDAO {
         return jdbcTemplate.query(sql.toString(), param.toArray(), new BeanPropertyRowMapper<User>(User.class)).get(0);
     }
 
-    public void delete(String userId) {
+    public void delete(String id) {
         List<Object> param = Lists.newArrayList();
-        param.add(userId);
-        jdbcTemplate.update("delete from user where user_id = ?", param.toArray());
+        param.add(id);
+        jdbcTemplate.update("delete from user where id = ?", param.toArray());
     }
 
     public void add(User user) {

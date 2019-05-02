@@ -45,7 +45,7 @@ public class DeleteService {
     private RecordDAO recordDAO;
 
     public String deleteDepartment(String id) {
-        if (Objects.nonNull(id))
+        if (!Objects.nonNull(id))
             return Constant.EMPTY_PARAM;
         try {
             departmentDAO.delete(id);
@@ -56,7 +56,7 @@ public class DeleteService {
     }
 
     public String deleteDisease(String id) {
-        if (Objects.nonNull(id))
+        if (!Objects.nonNull(id))
             return Constant.EMPTY_PARAM;
         try {
             diseaseDAO.delete(id);
@@ -67,7 +67,7 @@ public class DeleteService {
     }
 
     public String deleteHospital(String id) {
-        if (Objects.nonNull(id))
+        if (!Objects.nonNull(id))
             return Constant.EMPTY_PARAM;
         try {
             hospitalDAO.delete(id);
@@ -78,7 +78,7 @@ public class DeleteService {
     }
 
     public String deletePatient(String id) {
-        if (Objects.nonNull(id))
+        if (!Objects.nonNull(id))
             return Constant.EMPTY_PARAM;
         try {
             patientDAO.delete(id);
@@ -89,7 +89,7 @@ public class DeleteService {
     }
 
     public String deleteRecord(String id) {
-        if (Objects.nonNull(id))
+        if (!Objects.nonNull(id))
             return Constant.EMPTY_PARAM;
         try {
             recordDAO.delete(id);
@@ -100,7 +100,7 @@ public class DeleteService {
     }
 
     public String deleteStaff(String id) {
-        if (Objects.nonNull(id))
+        if (!Objects.nonNull(id))
             return Constant.EMPTY_PARAM;
         try {
             staffDAO.delete(id);
@@ -111,7 +111,7 @@ public class DeleteService {
     }
 
     public String deleteTest(String id) {
-        if (Objects.nonNull(id))
+        if (!Objects.nonNull(id))
             return Constant.EMPTY_PARAM;
         try {
             testDAO.delete(id);
@@ -122,7 +122,7 @@ public class DeleteService {
     }
 
     public String deleteTestRecord(String id) {
-        if (Objects.nonNull(id))
+        if (!Objects.nonNull(id))
             return Constant.EMPTY_PARAM;
         try {
             testRecordDAO.delete(id);
@@ -133,7 +133,7 @@ public class DeleteService {
     }
 
     public String deleteTreatment(String id) {
-        if (Objects.nonNull(id))
+        if (!Objects.nonNull(id))
             return Constant.EMPTY_PARAM;
         try {
             treatmentDAO.delete(id);
@@ -144,7 +144,7 @@ public class DeleteService {
     }
 
     public String deleteTreatmentRecord(String id) {
-        if (Objects.nonNull(id))
+        if (!Objects.nonNull(id))
             return Constant.EMPTY_PARAM;
         try {
             treatmentRecordDAO.delete(id);
@@ -155,7 +155,7 @@ public class DeleteService {
     }
 
     public String deleteUser(String id) {
-        if (Objects.nonNull(id))
+        if (!Objects.nonNull(id))
             return Constant.EMPTY_PARAM;
         try {
             userDAO.delete(id);
