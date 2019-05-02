@@ -7,10 +7,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c2d3f92d-6b6d-4991-b147-087eadb85d35" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/../yjyEmr/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../yjyEmr/src/main/java/web/DoctorController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../yjyEmr/src/main/java/web/PatientController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../yjyEmr/src/main/java/web/DepartmentController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../yjyEmr/src/main/java/web/DiseaseController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../yjyEmr/src/main/java/web/HospitalController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../yjyEmr/src/main/java/web/RecordController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../yjyEmr/src/main/java/web/StaffController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../yjyEmr/src/main/java/web/TestController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../yjyEmr/src/main/java/web/TestRecordController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../yjyEmr/src/main/java/web/TreatmentController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../yjyEmr/src/main/java/web/TreatmentRecordController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../yjyEmr/src/main/java/web/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../yjyEmr/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../yjyEmr/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yjyEmr/src/main/java/web/DoctorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../yjyEmr/src/main/java/web/DoctorController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yjyEmr/src/main/java/web/EmrController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../yjyEmr/src/main/java/web/EmrController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yjyEmr/src/main/java/web/PatientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../yjyEmr/src/main/java/web/PatientController.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -22,41 +32,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="EmrController.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/../yjyEmr/src/main/java/web/EmrController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-483">
-              <caret line="452" lean-forward="true" selection-start-line="452" selection-end-line="452" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PatientController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../yjyEmr/src/main/java/web/PatientController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="460">
-              <caret line="88" column="19" selection-start-line="88" selection-start-column="19" selection-end-line="88" selection-end-column="19" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DoctorController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../yjyEmr/src/main/java/web/DoctorController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="460">
-              <caret line="175" selection-start-line="175" selection-end-line="175" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -74,8 +50,19 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/main/test/java/DAOTest.java" />
-        <option value="$PROJECT_DIR$/../yjyEmr/src/main/java/web/PatientController.java" />
+        <option value="$PROJECT_DIR$/../yjyEmr/src/main/java/web/UserController.java" />
+        <option value="$PROJECT_DIR$/../yjyEmr/src/main/java/web/DepartmentController.java" />
+        <option value="$PROJECT_DIR$/../yjyEmr/src/main/java/web/DiseaseController.java" />
+        <option value="$PROJECT_DIR$/../yjyEmr/src/main/java/web/HospitalController.java" />
+        <option value="$PROJECT_DIR$/../yjyEmr/src/main/java/web/RecordController.java" />
+        <option value="$PROJECT_DIR$/../yjyEmr/src/main/java/web/StaffController.java" />
+        <option value="$PROJECT_DIR$/../yjyEmr/src/main/java/web/TestController.java" />
+        <option value="$PROJECT_DIR$/../yjyEmr/src/main/java/web/TreatmentController.java" />
+        <option value="$PROJECT_DIR$/../yjyEmr/src/main/java/web/EmrController.java" />
+        <option value="$PROJECT_DIR$/../yjyEmr/src/main/java/web/TreatmentRecordController.java" />
         <option value="$PROJECT_DIR$/../yjyEmr/src/main/java/web/DoctorController.java" />
+        <option value="$PROJECT_DIR$/../yjyEmr/src/main/java/web/PatientController.java" />
+        <option value="$PROJECT_DIR$/../yjyEmr/src/main/java/web/TestRecordController.java" />
       </list>
     </option>
   </component>
@@ -114,6 +101,9 @@
     <option name="y" value="113" />
     <option name="width" value="960" />
     <option name="height" value="1032" />
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -336,16 +326,15 @@
       <option name="presentableId" value="Default" />
       <updated>1556527880291</updated>
       <workItem from="1556527885794" duration="752000" />
-      <workItem from="1556777469364" duration="1232000" />
+      <workItem from="1556777469364" duration="3069000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1984000" />
+    <option name="totallyTimeSpent" value="3821000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="Event Log" order="14" side_tool="true" />
@@ -477,10 +466,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../yjyEmr/src/main/java/web/PatientController.java">
+    <entry file="file://$PROJECT_DIR$/../yjyEmr/src/main/java/web/DepartmentController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="88" column="19" selection-start-line="88" selection-start-column="19" selection-end-line="88" selection-end-column="19" />
+        <state relative-caret-position="552">
+          <caret line="65" column="31" selection-start-line="65" selection-start-column="31" selection-end-line="65" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../yjyEmr/src/main/java/web/DiseaseController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1380">
+          <caret line="64" column="31" selection-start-line="64" selection-start-column="31" selection-end-line="64" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -489,8 +488,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../yjyEmr/src/main/java/web/DoctorController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="175" selection-start-line="175" selection-end-line="175" />
+        <state relative-caret-position="299">
+          <caret line="168" column="57" selection-start-line="30" selection-start-column="6" selection-end-line="184" selection-end-column="7" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -499,8 +498,98 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../yjyEmr/src/main/java/web/EmrController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-483">
-          <caret line="452" lean-forward="true" selection-start-line="452" selection-end-line="452" />
+        <state relative-caret-position="11178">
+          <caret line="501" column="7" lean-forward="true" selection-start-line="493" selection-start-column="6" selection-end-line="501" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../yjyEmr/src/main/java/web/HospitalController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1311">
+          <caret line="64" column="31" selection-start-line="64" selection-start-column="31" selection-end-line="64" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../yjyEmr/src/main/java/web/PatientController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1863">
+          <caret line="29" column="31" selection-start-line="29" selection-start-column="31" selection-end-line="29" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../yjyEmr/src/main/java/web/RecordController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1449">
+          <caret line="63" column="31" selection-start-line="63" selection-start-column="31" selection-end-line="63" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../yjyEmr/src/main/java/web/StaffController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1449">
+          <caret line="64" column="31" selection-start-line="64" selection-start-column="31" selection-end-line="64" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../yjyEmr/src/main/java/web/TestController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1472">
+          <caret line="64" column="31" selection-start-line="64" selection-start-column="31" selection-end-line="64" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../yjyEmr/src/main/java/web/TestRecordController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1449">
+          <caret line="64" column="31" selection-start-line="64" selection-start-column="31" selection-end-line="64" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../yjyEmr/src/main/java/web/TreatmentController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1380">
+          <caret line="64" column="31" selection-start-line="64" selection-start-column="31" selection-end-line="64" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../yjyEmr/src/main/java/web/TreatmentRecordController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1242">
+          <caret line="64" column="31" selection-start-line="64" selection-start-column="31" selection-end-line="64" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../yjyEmr/src/main/java/web/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1840">
+          <caret line="86" column="31" selection-start-line="86" selection-start-column="31" selection-end-line="86" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
