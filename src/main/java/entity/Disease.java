@@ -26,12 +26,12 @@ public class Disease extends Emr {
         this.icdCode = icdCode;
     }
 
-    public String getDieaseName() {
+    public String getDiseaseName() {
         return diseaseName;
     }
 
-    public void setDieaseName(String dieaseName) {
-        this.diseaseName = dieaseName;
+    public void setDiseaseName(String diseaseName) {
+        this.diseaseName = diseaseName;
     }
 
     public String getCode() {

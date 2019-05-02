@@ -255,6 +255,7 @@ public class QueryService {
         }
         try {
             List<User> result = userDAO.query(user);
+            System.out.println("size:"+result.size());
             dto.setResult(result);
         } catch (Exception e) {
             dto.setFlag(Constant.QUERY_ERROR);

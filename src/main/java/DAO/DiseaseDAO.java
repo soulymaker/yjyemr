@@ -33,9 +33,9 @@ public class DiseaseDAO {
             sql.append(" and code = ? ");
             param.add(disease.getCode());
         }
-        if (Objects.nonNull(disease.getDieaseName())) {
+        if (Objects.nonNull(disease.getDiseaseName())) {
             sql.append(" and disease_name like ?");
-            param.add("%" + disease.getDieaseName() + "%");
+            param.add("%" + disease.getDiseaseName() + "%");
         }
         if (Objects.nonNull(disease.getIcdCode())) {
             sql.append(" and icd_code = ?");
@@ -52,7 +52,7 @@ public class DiseaseDAO {
         StringBuilder sql = new StringBuilder("insert into disease(icd_code,disease_name,code) values(?,?,?)");
         List<Object> param = Lists.newArrayList();
         param.add(disease.getIcdCode());
-        param.add(disease.getDieaseName());
+        param.add(disease.getDiseaseName());
         param.add(disease.getCode());
         jdbcTemplate.update(sql.toString(), param.toArray());
     }
@@ -66,9 +66,9 @@ public class DiseaseDAO {
             sql.append(" icd_code = ?,");
             param.add(disease.getIcdCode());
         }
-        if (Objects.nonNull(disease.getDieaseName())) {
+        if (Objects.nonNull(disease.getDiseaseName())) {
             sql.append(" disease_name = ?,");
-            param.add(disease.getDieaseName());
+            param.add(disease.getDiseaseName());
         }
         if (Objects.nonNull(disease.getCode())) {
             sql.append(" code = ?,");

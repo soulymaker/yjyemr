@@ -13,6 +13,8 @@ import service.DeleteService;
 import service.QueryService;
 import service.UpdateService;
 
+import java.sql.Timestamp;
+
 @RestController
 @RequestMapping("/api")
 public class DepartmentController {
@@ -40,9 +42,11 @@ public class DepartmentController {
         }
     }
 
-    @RequestMapping(value = {"/web/addDepartment"}, method = RequestMethod.POST)
+    @RequestMapping(value = {"/addDepartment"}, method = RequestMethod.POST)
     @ResponseBody
     public JSONObject addDepartemnt(@RequestBody Department department) {
+        Timestamp time = new Timestamp(System.currentTimeMillis());
+        department.setLastchangedTime(time);
         String result = addService.addDepartment(department);
         if(result.equals(Constant.ADD_SUCCESS))
             return Result.returnData(null,result);
