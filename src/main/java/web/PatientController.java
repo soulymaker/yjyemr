@@ -13,6 +13,7 @@ import service.QueryService;
 import service.UpdateService;
 
 @RestController
+@RequestMapping("/api")
 public class PatientController{
 
     @Autowired
@@ -30,6 +31,18 @@ public class PatientController{
     @RequestMapping(value = {"/queryPatient"}, method = RequestMethod.POST)
     @ResponseBody
     public JSONObject queryPatient(@RequestBody Patient patient) {
+        QueryDTO queryDTO = queryService.queryPatient(patient);
+        if(!queryDTO.getFlag().equals(Constant.QUERY_SUCCESS)) {
+            return Result.returnData(queryDTO.getResult());
+        } else {
+            return Result.returnData(queryDTO.getFlag());
+        }
+    }
+
+    @RequestMapping(value = {"/queryAllPatient"}, method = RequestMethod.POST)
+    @ResponseBody
+    public JSONObject queryAllPatient() {
+        Patient patient = new Patient();
         QueryDTO queryDTO = queryService.queryPatient(patient);
         if(!queryDTO.getFlag().equals(Constant.QUERY_SUCCESS)) {
             return Result.returnData(queryDTO.getResult());

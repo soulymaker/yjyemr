@@ -7,16 +7,13 @@ import com.alibaba.fastjson.JSONObject;
 import entity.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import service.AddService;
 import service.DeleteService;
 import service.QueryService;
 import service.UpdateService;
 
-@Controller
+@RestController
 @RequestMapping("/api")
 public class TestController {
     @Autowired
@@ -34,6 +31,18 @@ public class TestController {
     @RequestMapping(value = {"/queryTest"}, method = RequestMethod.POST)
     @ResponseBody
     public JSONObject queryTest(@RequestBody Test test) {
+        QueryDTO queryDTO = queryService.queryTest(test);
+        if(!queryDTO.getFlag().equals(Constant.QUERY_SUCCESS)) {
+            return Result.returnData(queryDTO.getResult());
+        } else {
+            return Result.returnData(queryDTO.getFlag());
+        }
+    }
+
+    @RequestMapping(value = {"/queryAllTest"}, method = RequestMethod.POST)
+    @ResponseBody
+    public JSONObject queryAllTest() {
+        Test test = new Test();
         QueryDTO queryDTO = queryService.queryTest(test);
         if(!queryDTO.getFlag().equals(Constant.QUERY_SUCCESS)) {
             return Result.returnData(queryDTO.getResult());

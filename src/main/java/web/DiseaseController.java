@@ -7,16 +7,13 @@ import com.alibaba.fastjson.JSONObject;
 import entity.Disease;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import service.AddService;
 import service.DeleteService;
 import service.QueryService;
 import service.UpdateService;
 
-@Controller
+@RestController
 @RequestMapping("/api")
 public class DiseaseController {
     @Autowired
@@ -34,6 +31,18 @@ public class DiseaseController {
     @RequestMapping(value = {"/queryDisease"}, method = RequestMethod.POST)
     @ResponseBody
     public JSONObject queryDisease(@RequestBody Disease disease) {
+        QueryDTO queryDTO = queryService.queryDisease(disease);
+        if(!queryDTO.getFlag().equals(Constant.QUERY_SUCCESS)) {
+            return Result.returnData(queryDTO.getResult());
+        } else {
+            return Result.returnData(queryDTO.getFlag());
+        }
+    }
+
+    @RequestMapping(value = {"/queryAllDisease"}, method = RequestMethod.POST)
+    @ResponseBody
+    public JSONObject queryAllDisease() {
+        Disease disease = new Disease();
         QueryDTO queryDTO = queryService.queryDisease(disease);
         if(!queryDTO.getFlag().equals(Constant.QUERY_SUCCESS)) {
             return Result.returnData(queryDTO.getResult());

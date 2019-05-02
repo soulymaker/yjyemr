@@ -7,16 +7,13 @@ import com.alibaba.fastjson.JSONObject;
 import entity.Treatment;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import service.AddService;
 import service.DeleteService;
 import service.QueryService;
 import service.UpdateService;
 
-@Controller
+@RestController
 @RequestMapping("/api")
 public class TreatmentController {
     @Autowired
@@ -34,6 +31,18 @@ public class TreatmentController {
     @RequestMapping(value = {"/queryTreatment"}, method = RequestMethod.POST)
     @ResponseBody
     public JSONObject queryTreatment(@RequestBody Treatment treatment) {
+        QueryDTO queryDTO = queryService.queryTreatment(treatment);
+        if(!queryDTO.getFlag().equals(Constant.QUERY_SUCCESS)) {
+            return Result.returnData(queryDTO.getResult());
+        } else {
+            return Result.returnData(queryDTO.getFlag());
+        }
+    }
+
+    @RequestMapping(value = {"/queryAllTreatment"}, method = RequestMethod.POST)
+    @ResponseBody
+    public JSONObject queryAllTreatment() {
+        Treatment treatment = new Treatment();
         QueryDTO queryDTO = queryService.queryTreatment(treatment);
         if(!queryDTO.getFlag().equals(Constant.QUERY_SUCCESS)) {
             return Result.returnData(queryDTO.getResult());

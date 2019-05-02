@@ -7,16 +7,13 @@ import com.alibaba.fastjson.JSONObject;
 import entity.Department;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import service.AddService;
 import service.DeleteService;
 import service.QueryService;
 import service.UpdateService;
 
-@Controller
+@RestController
 @RequestMapping("/api")
 public class DepartmentController {
 
@@ -71,5 +68,17 @@ public class DepartmentController {
             return Result.returnData(null,result);
         else
             return Result.returnData(result,null);
+    }
+
+    @RequestMapping(value = {"/queryAllDepartment"})
+    @ResponseBody
+    public JSONObject queryAllDepartment() {
+        Department department = new Department();
+        QueryDTO queryDTO = queryService.queryDepartment(department);
+        if(!queryDTO.getFlag().equals(Constant.QUERY_SUCCESS)) {
+            return Result.returnData(queryDTO.getResult());
+        } else {
+            return Result.returnData(queryDTO.getFlag());
+        }
     }
 }

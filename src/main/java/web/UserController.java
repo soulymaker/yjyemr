@@ -9,10 +9,7 @@ import com.google.common.collect.Maps;
 import entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import service.AddService;
 import service.DeleteService;
 import service.QueryService;
@@ -21,7 +18,7 @@ import utils.encrypt.Md5;
 
 import java.util.Map;
 
-@Controller
+@RestController
 @RequestMapping("/api")
 public class UserController {
     @Autowired
@@ -56,6 +53,18 @@ public class UserController {
     @RequestMapping(value = {"/queryUser"}, method = RequestMethod.POST)
     @ResponseBody
     public JSONObject queryUser(@RequestBody User user) {
+        QueryDTO queryDTO = queryService.queryUser2(user);
+        if(!queryDTO.getFlag().equals(Constant.QUERY_SUCCESS)) {
+            return Result.returnData(queryDTO.getResult());
+        } else {
+            return Result.returnData(queryDTO.getFlag());
+        }
+    }
+
+    @RequestMapping(value = {"/queryAllUser"}, method = RequestMethod.POST)
+    @ResponseBody
+    public JSONObject queryAllUser() {
+        User user = new User();
         QueryDTO queryDTO = queryService.queryUser2(user);
         if(!queryDTO.getFlag().equals(Constant.QUERY_SUCCESS)) {
             return Result.returnData(queryDTO.getResult());

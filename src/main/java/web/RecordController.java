@@ -7,16 +7,13 @@ import com.alibaba.fastjson.JSONObject;
 import entity.Record;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import service.AddService;
 import service.DeleteService;
 import service.QueryService;
 import service.UpdateService;
 
-@Controller
+@RestController
 @RequestMapping("/api")
 public class RecordController {
     @Autowired
@@ -41,6 +38,19 @@ public class RecordController {
             return Result.returnData(queryDTO.getFlag());
         }
     }
+
+    @RequestMapping(value = {"/queryAllRecord"}, method = RequestMethod.POST)
+    @ResponseBody
+    public JSONObject queryAllRecord() {
+        Record record = new Record();
+        QueryDTO queryDTO = queryService.queryRecord(record);
+        if(!queryDTO.getFlag().equals(Constant.QUERY_SUCCESS)) {
+            return Result.returnData(queryDTO.getResult());
+        } else {
+            return Result.returnData(queryDTO.getFlag());
+        }
+    }
+
     @RequestMapping(value = {"/addRecord"}, method = RequestMethod.POST)
     @ResponseBody
     public JSONObject addRecord(@RequestBody Record record) {
