@@ -32,7 +32,7 @@ public class TestController {
     @ResponseBody
     public JSONObject queryTest(@RequestBody Test test) {
         QueryDTO queryDTO = queryService.queryTest(test);
-        if(!queryDTO.getFlag().equals(Constant.QUERY_SUCCESS)) {
+        if(queryDTO.getFlag().equals(Constant.QUERY_SUCCESS)) {
             return Result.returnData(queryDTO.getResult());
         } else {
             return Result.returnData(queryDTO.getFlag());
@@ -44,7 +44,7 @@ public class TestController {
     public JSONObject queryAllTest() {
         Test test = new Test();
         QueryDTO queryDTO = queryService.queryTest(test);
-        if(!queryDTO.getFlag().equals(Constant.QUERY_SUCCESS)) {
+        if(queryDTO.getFlag().equals(Constant.QUERY_SUCCESS)) {
             return Result.returnData(queryDTO.getResult());
         } else {
             return Result.returnData(queryDTO.getFlag());

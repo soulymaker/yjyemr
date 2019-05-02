@@ -32,7 +32,7 @@ public class PatientController{
     @ResponseBody
     public JSONObject queryPatient(@RequestBody Patient patient) {
         QueryDTO queryDTO = queryService.queryPatient(patient);
-        if(!queryDTO.getFlag().equals(Constant.QUERY_SUCCESS)) {
+        if(queryDTO.getFlag().equals(Constant.QUERY_SUCCESS)) {
             return Result.returnData(queryDTO.getResult());
         } else {
             return Result.returnData(queryDTO.getFlag());
@@ -44,7 +44,7 @@ public class PatientController{
     public JSONObject queryAllPatient() {
         Patient patient = new Patient();
         QueryDTO queryDTO = queryService.queryPatient(patient);
-        if(!queryDTO.getFlag().equals(Constant.QUERY_SUCCESS)) {
+        if(queryDTO.getFlag().equals(Constant.QUERY_SUCCESS)) {
             return Result.returnData(queryDTO.getResult());
         } else {
             return Result.returnData(queryDTO.getFlag());

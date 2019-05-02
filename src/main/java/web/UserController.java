@@ -54,7 +54,7 @@ public class UserController {
     @ResponseBody
     public JSONObject queryUser(@RequestBody User user) {
         QueryDTO queryDTO = queryService.queryUser2(user);
-        if(!queryDTO.getFlag().equals(Constant.QUERY_SUCCESS)) {
+        if(queryDTO.getFlag().equals(Constant.QUERY_SUCCESS)) {
             return Result.returnData(queryDTO.getResult());
         } else {
             return Result.returnData(queryDTO.getFlag());
@@ -66,7 +66,7 @@ public class UserController {
     public JSONObject queryAllUser() {
         User user = new User();
         QueryDTO queryDTO = queryService.queryUser2(user);
-        if(!queryDTO.getFlag().equals(Constant.QUERY_SUCCESS)) {
+        if(queryDTO.getFlag().equals(Constant.QUERY_SUCCESS)) {
             return Result.returnData(queryDTO.getResult());
         } else {
             return Result.returnData(queryDTO.getFlag());

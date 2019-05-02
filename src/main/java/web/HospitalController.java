@@ -32,7 +32,7 @@ public class HospitalController {
     @ResponseBody
     public JSONObject queryHospital(@RequestBody Hospital hospital) {
         QueryDTO queryDTO = queryService.queryHospital(hospital);
-        if(!queryDTO.getFlag().equals(Constant.QUERY_SUCCESS)) {
+        if(queryDTO.getFlag().equals(Constant.QUERY_SUCCESS)) {
             return Result.returnData(queryDTO.getResult());
         } else {
             return Result.returnData(queryDTO.getFlag());
@@ -44,7 +44,7 @@ public class HospitalController {
     public JSONObject queryAllHospital() {
         Hospital hospital = new Hospital();
         QueryDTO queryDTO = queryService.queryHospital(hospital);
-        if(!queryDTO.getFlag().equals(Constant.QUERY_SUCCESS)) {
+        if(queryDTO.getFlag().equals(Constant.QUERY_SUCCESS)) {
             return Result.returnData(queryDTO.getResult());
         } else {
             return Result.returnData(queryDTO.getFlag());

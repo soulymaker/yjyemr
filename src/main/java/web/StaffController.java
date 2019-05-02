@@ -32,7 +32,7 @@ public class StaffController {
     @ResponseBody
     public JSONObject queryStaff(@RequestBody Staff staff) {
         QueryDTO queryDTO = queryService.queryStaff(staff);
-        if(!queryDTO.getFlag().equals(Constant.QUERY_SUCCESS)) {
+        if(queryDTO.getFlag().equals(Constant.QUERY_SUCCESS)) {
             return Result.returnData(queryDTO.getResult());
         } else {
             return Result.returnData(queryDTO.getFlag());
@@ -44,7 +44,7 @@ public class StaffController {
     public JSONObject queryAllStaff() {
         Staff staff = new Staff();
         QueryDTO queryDTO = queryService.queryStaff(staff);
-        if(!queryDTO.getFlag().equals(Constant.QUERY_SUCCESS)) {
+        if(queryDTO.getFlag().equals(Constant.QUERY_SUCCESS)) {
             return Result.returnData(queryDTO.getResult());
         } else {
             return Result.returnData(queryDTO.getFlag());

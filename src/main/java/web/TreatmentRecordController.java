@@ -32,7 +32,7 @@ public class TreatmentRecordController {
     @ResponseBody
     public JSONObject queryTreatmentRecord(@RequestBody TreatmentRecord treatmentRecord) {
         QueryDTO queryDTO = queryService.queryTreatmentRecord(treatmentRecord);
-        if(!queryDTO.getFlag().equals(Constant.QUERY_SUCCESS)) {
+        if(queryDTO.getFlag().equals(Constant.QUERY_SUCCESS)) {
             return Result.returnData(queryDTO.getResult());
         } else {
             return Result.returnData(queryDTO.getFlag());
@@ -44,7 +44,7 @@ public class TreatmentRecordController {
     public JSONObject queryAllTreatmentRecord() {
         TreatmentRecord treatmentRecord = new TreatmentRecord();
         QueryDTO queryDTO = queryService.queryTreatmentRecord(treatmentRecord);
-        if(!queryDTO.getFlag().equals(Constant.QUERY_SUCCESS)) {
+        if(queryDTO.getFlag().equals(Constant.QUERY_SUCCESS)) {
             return Result.returnData(queryDTO.getResult());
         } else {
             return Result.returnData(queryDTO.getFlag());

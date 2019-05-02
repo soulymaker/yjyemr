@@ -33,7 +33,7 @@ public class DepartmentController {
     @ResponseBody
     public JSONObject queryDepartment(@RequestBody Department department) {
         QueryDTO queryDTO = queryService.queryDepartment(department);
-        if(!queryDTO.getFlag().equals(Constant.QUERY_SUCCESS)) {
+        if(queryDTO.getFlag().equals(Constant.QUERY_SUCCESS)) {
             return Result.returnData(queryDTO.getResult());
         } else {
             return Result.returnData(queryDTO.getFlag());
@@ -75,7 +75,7 @@ public class DepartmentController {
     public JSONObject queryAllDepartment() {
         Department department = new Department();
         QueryDTO queryDTO = queryService.queryDepartment(department);
-        if(!queryDTO.getFlag().equals(Constant.QUERY_SUCCESS)) {
+        if(queryDTO.getFlag().equals(Constant.QUERY_SUCCESS)) {
             return Result.returnData(queryDTO.getResult());
         } else {
             return Result.returnData(queryDTO.getFlag());

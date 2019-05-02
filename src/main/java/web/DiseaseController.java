@@ -32,7 +32,7 @@ public class DiseaseController {
     @ResponseBody
     public JSONObject queryDisease(@RequestBody Disease disease) {
         QueryDTO queryDTO = queryService.queryDisease(disease);
-        if(!queryDTO.getFlag().equals(Constant.QUERY_SUCCESS)) {
+        if(queryDTO.getFlag().equals(Constant.QUERY_SUCCESS)) {
             return Result.returnData(queryDTO.getResult());
         } else {
             return Result.returnData(queryDTO.getFlag());
@@ -44,7 +44,7 @@ public class DiseaseController {
     public JSONObject queryAllDisease() {
         Disease disease = new Disease();
         QueryDTO queryDTO = queryService.queryDisease(disease);
-        if(!queryDTO.getFlag().equals(Constant.QUERY_SUCCESS)) {
+        if(queryDTO.getFlag().equals(Constant.QUERY_SUCCESS)) {
             return Result.returnData(queryDTO.getResult());
         } else {
             return Result.returnData(queryDTO.getFlag());
