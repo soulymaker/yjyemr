@@ -25,7 +25,7 @@ public class RecordDAO {
     public void add(Record record) {
         if (record == null)
             return;
-        StringBuilder sql = new StringBuilder("insert into record(uid,patient_name,doctor_name,consultation_date,description,disease_type,conclusion,visit_type) values(?,?,?,?,?,?,?,?)");
+        StringBuilder sql = new StringBuilder("insert into record(uid,patient_name,doctor_name,consultation_date,description,disease_type,conclusion,visit_type,treatment,test) values(?,?,?,?,?,?,?,?,?,?)");
         List<Object> param = Lists.newArrayList();
         param.add(record.getUid());
         param.add(record.getPatientName());
@@ -35,12 +35,12 @@ public class RecordDAO {
         param.add(record.getDiseaseType());
         param.add(record.getConclusion());
         param.add(record.getVisitType());
+        param.add(record.getTreatment());
+        param.add(record.getTest());
         jdbcTemplate.update(sql.toString(), param.toArray());
     }
 
     public void update(Record record) {
-        if (record == null || record.getId() == null)
-            return;
         StringBuilder sql = new StringBuilder("update record set ");
         List<Object> param = Lists.newArrayList();
         if (Objects.nonNull(record.getUid())) {

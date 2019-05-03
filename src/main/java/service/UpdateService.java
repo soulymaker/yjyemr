@@ -93,6 +93,7 @@ public class UpdateService {
         try {
             recordDAO.update(record);
         } catch (Exception e) {
+            e.printStackTrace();
             return Constant.UPDATE_ERROR;
         }
         return Constant.UPDATE_SUCCESS;
@@ -162,9 +163,9 @@ public class UpdateService {
             return Constant.EMPTY_PARAM;
         try {
             userDAO.update(user);
+            return Constant.UPDATE_SUCCESS;
         } catch (Exception e) {
             return Constant.UPDATE_ERROR;
         }
-        return Constant.UPDATE_SUCCESS;
     }
 }

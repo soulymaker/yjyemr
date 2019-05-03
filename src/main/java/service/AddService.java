@@ -139,11 +139,10 @@ public class AddService {
             record.setTest(test);
             recordDAO.update(record);
             testRecordDAO.add(testRecord);
-
+            return Constant.ADD_SUCCESS;
         } catch (Exception e) {
             return Constant.ADD_ERROR;
         }
-        return Constant.ADD_SUCCESS;
     }
 
     public String addTreatment(Treatment treatment) {

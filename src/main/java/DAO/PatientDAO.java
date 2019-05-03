@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.Objects;
 
 @Repository
+@SuppressWarnings("all")
 public class PatientDAO {
 
     @Autowired
@@ -44,20 +45,16 @@ public class PatientDAO {
     public void update(Patient patient) {
         if (patient == null || patient.getId() == null)
             return;
-        StringBuilder sql = new StringBuilder("update patient set ");
         List<Object> param = Lists.newArrayList();
-        if (Objects.nonNull(patient.getAddress())) {
-            sql.append(" address = ?,");
-            param.add(patient.getAddress());
-        }
-        if (Objects.nonNull(patient.getPhone())) {
-            sql.append(" phone = ?,");
-            param.add(patient.getPhone());
-        }
-        sql.deleteCharAt(sql.length() - 1);
+        param.add(patient.getUid());
+        param.add(patient.getPatientName());
+        param.add(patient.getSex());
+        param.add(patient.getBirthYear());
+        param.add(patient.getNativePlace());
+        param.add(patient.getAddress());
+        param.add(patient.getPhone());
         param.add(patient.getId());
-        sql.append(" where id = ?");
-        jdbcTemplate.update(sql.toString(), param.toArray());
+        jdbcTemplate.update("update patient set uid=?, patientName = ?, sex=? , birthYear=? , nativePlace=?, address =?, phone=? where id =?", param.toArray());
     }
 
     public void add(Patient patient) {

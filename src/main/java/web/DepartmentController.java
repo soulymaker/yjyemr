@@ -45,8 +45,6 @@ public class DepartmentController {
     @RequestMapping(value = {"/addDepartment"}, method = RequestMethod.POST)
     @ResponseBody
     public JSONObject addDepartemnt(@RequestBody Department department) {
-        Timestamp time = new Timestamp(System.currentTimeMillis());
-        department.setLastchangedTime(time);
         String result = addService.addDepartment(department);
         if(result.equals(Constant.ADD_SUCCESS))
             return Result.returnData(null,result);

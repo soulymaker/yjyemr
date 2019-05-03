@@ -18,13 +18,11 @@ public class UserDAO {
     private JdbcTemplate jdbcTemplate;
 
     public void update(User user) {
-        if (user == null || !Objects.nonNull(user.getPassword()) || !Objects.nonNull(user.getUserId())) {
-            return;
-        }
         List<Object> param = Lists.newArrayList();
-        param.add(user.getPassword());
         param.add(user.getUserId());
-        jdbcTemplate.update("update user set password = ? where user_id = ?", param.toArray());
+        param.add(user.getUserType());
+        param.add(user.getId());
+        jdbcTemplate.update("update user set user_id=?,user_type=? where id = ?", param.toArray());
     }
 
     public List<User> query(User user) {
