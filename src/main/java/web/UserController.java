@@ -38,15 +38,17 @@ public class UserController {
     public JSONObject login(@RequestBody LoginDTO l) {
         User user = new User();
         user.setUserId(l.getUserId());
-        user.setPassword(Md5.MD5(l.getPassword()));
+        user.setPassword(l.getPassword());
         LoginDTO result = queryService.queryUser(user);
         if (result == null) {
             return Result.returnData("登录失败", "登录失败");
         } else {
             Map<String, String> map = Maps.newHashMap();
-            map.put("userId", l.getUserId());
-            map.put("userType", l.getUserType());
-            return Result.returnData(null, "success", map);
+            map.put("userId", result.getUserId());
+            map.put("userType", result.getUserType());
+            Map<String,Object> userMap=Maps.newHashMap();
+            userMap.put("user",map);
+            return Result.returnData(null, "success", userMap);
         }
     }
 
